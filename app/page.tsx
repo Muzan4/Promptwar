@@ -26,13 +26,13 @@ const roles = [
   },
   {
     label: 'Participant',
-    desc: 'Register, team up, and compete',
+    desc: 'Register, network, and engage',
     href: '/login?role=PARTICIPANT',
     icon: '👩‍💻',
     accent: '#00e5ff',
     glowColor: 'rgba(0,229,255,0.3)',
     borderColor: 'rgba(0,229,255,0.4)',
-    tagline: './hack --now',
+    tagline: './join --now',
   },
   {
     label: 'Judge',
@@ -47,7 +47,7 @@ const roles = [
 ]
 
 const stats = [
-  { value: '10K+', label: 'Hackers', icon: Users },
+  { value: '10K+', label: 'Attendees', icon: Users },
   { value: '200+', label: 'Events', icon: Star },
   { value: '99.9%', label: 'Uptime', icon: Shield },
   { value: '<50ms', label: 'Latency', icon: Cpu },
@@ -55,7 +55,7 @@ const stats = [
 
 // Animated terminal lines for the hero
 const terminalLines = [
-  { text: '> initializing Muzan Hackathon platform...', delay: 0.5, color: '#00e5ff' },
+  { text: '> initializing NexaEvent platform...', delay: 0.5, color: '#00e5ff' },
   { text: '> loading event modules...', delay: 1.0, color: '#a3a3a3' },
   { text: '> QR check-in:  ready', delay: 1.5, color: '#10b981' },
   { text: '> live leaderboard:  active', delay: 2.0, color: '#10b981' },
@@ -79,7 +79,7 @@ function TerminalHero() {
         <div className="w-3 h-3 rounded-full bg-red-500/80" />
         <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
         <div className="w-3 h-3 rounded-full bg-green-500/80" />
-        <span className="ml-2 text-xs text-gray-500">muzanhackathon ~ terminal</span>
+        <span className="ml-2 text-xs text-gray-500">nexaevent ~ terminal</span>
       </div>
       <div className="space-y-2">
         {terminalLines.map((line, i) => (
@@ -118,7 +118,7 @@ export default function LandingPage() {
             <div className="relative w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #0ea5e9, #a855f7)', boxShadow: '0 0 20px rgba(14,165,233,0.4)' }}>
               <Zap className="w-4 h-4 text-white" />
             </div>
-            <span className="font-bold text-lg tracking-tight">Muzan Hackathon</span>
+            <span className="font-bold text-lg tracking-tight">NexaEvent</span>
             <span className="hidden md:inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-widest" style={{ background: 'rgba(0,229,255,0.1)', color: '#00e5ff', border: '1px solid rgba(0,229,255,0.25)' }}>
               v2.0
             </span>
@@ -161,7 +161,7 @@ export default function LandingPage() {
                 <div className="w-2 h-2 rounded-full bg-green-400 live-dot" />
               </div>
               <Terminal className="w-3 h-3" />
-              LIVE | Muzan Hackathon 2026 | All systems operational
+              LIVE | NexaEvent 2026 | All systems operational
             </div>
           </motion.div>
 
@@ -332,7 +332,7 @@ export default function LandingPage() {
                   <span className="gradient-text">your next event?</span>
                 </h2>
                 <p className="mb-10 text-base" style={{ color: 'rgba(180,190,210,0.7)' }}>
-                  Join thousands of organizers, participants, and judges already on Muzan Hackathon.
+                  Join thousands of organizers, attendees, and reviewers already on NexaEvent.
                 </p>
                 <div className="flex items-center justify-center gap-4 flex-wrap">
                   <Link
@@ -364,10 +364,10 @@ export default function LandingPage() {
           <div className="w-6 h-6 rounded-lg flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #0ea5e9, #a855f7)' }}>
             <Zap className="w-3 h-3 text-white" />
           </div>
-          <span className="font-bold text-sm text-white">Muzan Hackathon</span>
+          <span className="font-bold text-sm text-white">NexaEvent</span>
         </div>
         <p className="text-xs" style={{ color: 'rgba(100,110,130,0.8)' }}>
-          2026 Muzan Hackathon | Built with love for Hack2Skill | <span style={{ color: 'rgba(0,229,255,0.5)' }}>Real-time | Role-based | Beautiful</span>
+          2026 NexaEvent | Built with love for Event Management | <span style={{ color: 'rgba(0,229,255,0.5)' }}>Real-time | Role-based | Beautiful</span>
         </p>
       </footer>
     </div>

@@ -261,7 +261,11 @@ export default function FaultyTerminal({
   const frozenTimeRef = useRef(0);
   const rafRef = useRef(0);
   const loadAnimationStartRef = useRef(0);
-  const timeOffsetRef = useRef(Math.random() * 100);
+  const timeOffsetRef = useRef(0);
+
+  useEffect(() => {
+    timeOffsetRef.current = Math.random() * 100;
+  }, []);
 
   const tintVec = useMemo(() => hexToRgb(tint), [tint]);
 

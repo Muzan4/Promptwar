@@ -94,7 +94,7 @@ export default function AnnouncementsPage() {
                 <h3 className="font-semibold text-lg flex items-center gap-2">
                   <Megaphone className="w-5 h-5 text-violet-400" /> Compose Announcement
                 </h3>
-                <button onClick={() => setShowCompose(false)} className="p-1.5 rounded-lg hover:bg-white/10 text-gray-400">
+                <button aria-label="Close modal" onClick={() => setShowCompose(false)} className="p-1.5 rounded-lg hover:bg-white/10 text-gray-400">
                   <X className="w-4 h-4" />
                 </button>
               </div>

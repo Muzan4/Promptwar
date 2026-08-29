@@ -15,9 +15,12 @@ const AuthContext = createContext<AuthContextType>({
   signOut: async () => {},
 })
 
+import { useRouter } from 'next/navigation'
+
 export function FirebaseAuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null)
   const [loading, setLoading] = useState(true)
+  const router = useRouter()
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -29,7 +32,7 @@ export function FirebaseAuthProvider({ children }: { children: React.ReactNode }
 
   const signOut = async () => {
     await firebaseSignOut(auth)
-    window.location.href = '/login'
+    router.push('/login')
   }
 
   return (

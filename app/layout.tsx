@@ -8,7 +8,7 @@ import FaultyTerminal from '@/components/ui/FaultyTerminal'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Muzan Hackathon - Smart Event Management Platform',
+  title: 'NexaEvent - Smart Event Management Platform',
   description: 'Unified real-time hackathon & event management platform',
 }
 

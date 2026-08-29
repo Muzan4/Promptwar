@@ -77,6 +77,7 @@ export default function LeaderboardPage() {
             </div>
             <button
               onClick={fetchLeaderboard}
+              aria-label="Refresh leaderboard"
               className="p-2 rounded-lg hover:bg-white/10 text-gray-400 hover:text-white transition-colors"
             >
               <RefreshCw className="w-4 h-4" />
