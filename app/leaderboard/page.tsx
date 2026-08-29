@@ -67,7 +67,7 @@ export default function LeaderboardPage() {
             </div>
             <div>
               <h1 className="font-bold">Live Leaderboard</h1>
-              <p className="text-xs text-gray-500">NexaHack 2024 · Auto-updates every 15s</p>
+              <p className="text-xs text-gray-500">Muzan Hackathon 2026 Â· Auto-updates every 15s</p>
             </div>
           </div>
           <div className="flex items-center gap-3">
@@ -99,7 +99,7 @@ export default function LeaderboardPage() {
           </div>
         ) : (
           <>
-            {/* Podium — Top 3 */}
+            {/* Podium â€” Top 3 */}
             {top3.length > 0 && (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -122,7 +122,7 @@ export default function LeaderboardPage() {
                     >
                       {/* Rank */}
                       <div className={`w-10 h-10 rounded-full bg-gradient-to-br ${rankColors[i] || 'from-gray-500 to-gray-600'} flex items-center justify-center font-bold text-lg mb-4`}>
-                        {i === 0 ? '🥇' : i === 1 ? '🥈' : '🥉'}
+                        {i === 0 ? 'ðŸ¥‡' : i === 1 ? 'ðŸ¥ˆ' : 'ðŸ¥‰'}
                       </div>
                       <h3 className="font-bold text-lg mb-1">{entry.team.name}</h3>
                       <p className="text-sm font-medium text-gray-300 mb-1">{entry.title}</p>

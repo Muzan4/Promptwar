@@ -16,7 +16,7 @@ export function DashboardLayout({
     <div className="flex min-h-screen bg-transparent w-full">
       {/* Mobile Header */}
       <div className="md:hidden fixed top-0 left-0 right-0 h-16 glass z-50 flex items-center justify-between px-4 border-b border-white/10">
-        <span className="font-bold text-lg">NexaEvent</span>
+        <span className="font-bold text-lg">Muzan Hackathon</span>
         <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="p-2 rounded-xl bg-white/5 border border-white/10">
           {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>

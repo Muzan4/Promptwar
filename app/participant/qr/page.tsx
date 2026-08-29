@@ -39,7 +39,7 @@ export default function MyQRCodePage() {
     <DashboardLayout role="PARTICIPANT">
       <PageHeader
         title="My QR Code"
-        subtitle="Your digital ticket to NexaHack 2024"
+        subtitle="Your digital ticket to Muzan Hackathon 2026"
       />
 
       <div className="flex flex-col items-center justify-center max-w-md mx-auto mt-8">

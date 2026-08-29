@@ -10,15 +10,15 @@ const features = [
   { icon: Bell, title: 'Live Announcements', desc: 'Real-time push notifications for schedule changes and alerts', color: 'text-orange-400', glow: 'rgba(251,146,60,0.15)', border: 'rgba(251,146,60,0.3)' },
   { icon: Award, title: 'Judging Portal', desc: 'Structured rubric-based scoring with instant feedback', color: 'text-emerald-400', glow: 'rgba(52,211,153,0.15)', border: 'rgba(52,211,153,0.3)' },
   { icon: BarChart3, title: 'Live Leaderboard', desc: 'Dynamic rankings updated in real-time as scores come in', color: 'text-pink-400', glow: 'rgba(244,114,182,0.15)', border: 'rgba(244,114,182,0.3)' },
-  { icon: Zap, title: 'One Dashboard', desc: 'Everything consolidated — zero platform juggling', color: 'text-yellow-400', glow: 'rgba(250,204,21,0.15)', border: 'rgba(250,204,21,0.3)' },
+  { icon: Zap, title: 'One Dashboard', desc: 'Everything consolidated Ã¢â‚¬â€ zero platform juggling', color: 'text-yellow-400', glow: 'rgba(250,204,21,0.15)', border: 'rgba(250,204,21,0.3)' },
 ]
 
 const roles = [
   {
     label: 'Organizer',
-    desc: 'Full control — manage everything',
+    desc: 'Full control Ã¢â‚¬â€ manage everything',
     href: '/login?role=ORGANIZER',
-    icon: '🎯',
+    icon: 'Ã°Å¸Å½Â¯',
     accent: '#a855f7',
     glowColor: 'rgba(168,85,247,0.3)',
     borderColor: 'rgba(168,85,247,0.4)',
@@ -28,7 +28,7 @@ const roles = [
     label: 'Participant',
     desc: 'Register, team up, and compete',
     href: '/login?role=PARTICIPANT',
-    icon: '🚀',
+    icon: 'Ã°Å¸Å¡â‚¬',
     accent: '#00e5ff',
     glowColor: 'rgba(0,229,255,0.3)',
     borderColor: 'rgba(0,229,255,0.4)',
@@ -38,7 +38,7 @@ const roles = [
     label: 'Judge',
     desc: 'Score submissions with precision',
     href: '/login?role=JUDGE',
-    icon: '⚖️',
+    icon: 'Ã¢Å¡â€“Ã¯Â¸Â',
     accent: '#10b981',
     glowColor: 'rgba(16,185,129,0.3)',
     borderColor: 'rgba(16,185,129,0.4)',
@@ -55,10 +55,10 @@ const stats = [
 
 // Animated terminal lines for the hero
 const terminalLines = [
-  { text: '> initializing NexaEvent platform...', delay: 0.5, color: '#00e5ff' },
+  { text: '> initializing Muzan Hackathon platform...', delay: 0.5, color: '#00e5ff' },
   { text: '> loading event modules...', delay: 1.0, color: '#a3a3a3' },
-  { text: '> QR check-in: ✓ ready', delay: 1.5, color: '#10b981' },
-  { text: '> live leaderboard: ✓ active', delay: 2.0, color: '#10b981' },
+  { text: '> QR check-in: Ã¢Å“â€œ ready', delay: 1.5, color: '#10b981' },
+  { text: '> live leaderboard: Ã¢Å“â€œ active', delay: 2.0, color: '#10b981' },
   { text: '> all systems operational', delay: 2.5, color: '#00e5ff' },
 ]
 
@@ -79,7 +79,7 @@ function TerminalHero() {
         <div className="w-3 h-3 rounded-full bg-red-500/80" />
         <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
         <div className="w-3 h-3 rounded-full bg-green-500/80" />
-        <span className="ml-2 text-xs text-gray-500">nexaevent ~ terminal</span>
+        <span className="ml-2 text-xs text-gray-500">muzanhackathon ~ terminal</span>
       </div>
       <div className="space-y-2">
         {terminalLines.map((line, i) => (
@@ -106,7 +106,7 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen overflow-hidden" style={{ background: 'transparent' }}>
 
-      {/* ── Nav ─────────────────────────────────────── */}
+      {/* Ã¢â€â‚¬Ã¢â€â‚¬ Nav Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
       <motion.nav
         initial={{ y: -60, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -118,7 +118,7 @@ export default function LandingPage() {
             <div className="relative w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #0ea5e9, #a855f7)', boxShadow: '0 0 20px rgba(14,165,233,0.4)' }}>
               <Zap className="w-4 h-4 text-white" />
             </div>
-            <span className="font-bold text-lg tracking-tight">NexaEvent</span>
+            <span className="font-bold text-lg tracking-tight">Muzan Hackathon</span>
             <span className="hidden md:inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-widest" style={{ background: 'rgba(0,229,255,0.1)', color: '#00e5ff', border: '1px solid rgba(0,229,255,0.25)' }}>
               v2.0
             </span>
@@ -133,13 +133,13 @@ export default function LandingPage() {
               className="btn-neon px-5 py-2 text-sm font-semibold rounded-xl text-white transition-all"
               style={{ background: 'linear-gradient(135deg, #0284c7, #7c3aed)', border: '1px solid rgba(0,229,255,0.3)' }}
             >
-              Get Started →
+              Get Started Ã¢â€ â€™
             </Link>
           </div>
         </div>
       </motion.nav>
 
-      {/* ── Hero ────────────────────────────────────── */}
+      {/* Ã¢â€â‚¬Ã¢â€â‚¬ Hero Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
       <section className="relative pt-36 pb-28 px-6 overflow-hidden">
         {/* Background glow orbs */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] pointer-events-none" style={{ background: 'radial-gradient(ellipse at center, rgba(0,200,255,0.06) 0%, transparent 70%)' }} />
@@ -161,7 +161,7 @@ export default function LandingPage() {
                 <div className="w-2 h-2 rounded-full bg-green-400 live-dot" />
               </div>
               <Terminal className="w-3 h-3" />
-              LIVE · NexaHack 2024 · All systems operational
+              LIVE Ã‚Â· Muzan Hackathon 2026 Ã‚Â· All systems operational
             </div>
           </motion.div>
 
@@ -260,7 +260,7 @@ export default function LandingPage() {
         </motion.div>
       </section>
 
-      {/* ── Features ────────────────────────────────── */}
+      {/* Ã¢â€â‚¬Ã¢â€â‚¬ Features Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
       <section className="py-28 px-6 relative">
         <div className="absolute inset-0 grid-bg pointer-events-none opacity-50" />
         <div className="max-w-6xl mx-auto relative">
@@ -308,7 +308,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ── CTA ─────────────────────────────────────── */}
+      {/* Ã¢â€â‚¬Ã¢â€â‚¬ CTA Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
       <section className="py-28 px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -332,7 +332,7 @@ export default function LandingPage() {
                   <span className="gradient-text">your next event?</span>
                 </h2>
                 <p className="mb-10 text-base" style={{ color: 'rgba(180,190,210,0.7)' }}>
-                  Join thousands of organizers, participants, and judges already on NexaEvent.
+                  Join thousands of organizers, participants, and judges already on Muzan Hackathon.
                 </p>
                 <div className="flex items-center justify-center gap-4 flex-wrap">
                   <Link
@@ -357,17 +357,17 @@ export default function LandingPage() {
         </motion.div>
       </section>
 
-      {/* ── Footer ──────────────────────────────────── */}
+      {/* Ã¢â€â‚¬Ã¢â€â‚¬ Footer Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
       <footer className="py-8 px-6 text-center relative">
         <div className="neon-divider mb-8 max-w-2xl mx-auto" />
         <div className="flex items-center justify-center gap-2 mb-2">
           <div className="w-6 h-6 rounded-lg flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #0ea5e9, #a855f7)' }}>
             <Zap className="w-3 h-3 text-white" />
           </div>
-          <span className="font-bold text-sm text-white">NexaEvent</span>
+          <span className="font-bold text-sm text-white">Muzan Hackathon</span>
         </div>
         <p className="text-xs" style={{ color: 'rgba(100,110,130,0.8)' }}>
-          © 2024 NexaEvent · Built with ❤️ for Hack2Skill · <span style={{ color: 'rgba(0,229,255,0.5)' }}>Real-time · Role-based · Beautiful</span>
+          Ã‚Â© 2026 Muzan Hackathon Ã‚Â· Built with Ã¢ÂÂ¤Ã¯Â¸Â for Hack2Skill Ã‚Â· <span style={{ color: 'rgba(0,229,255,0.5)' }}>Real-time Ã‚Â· Role-based Ã‚Â· Beautiful</span>
         </p>
       </footer>
     </div>

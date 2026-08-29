@@ -28,7 +28,7 @@ export default function AttendeesPage() {
     if (!detectedCodes || detectedCodes.length === 0) return
     const data = detectedCodes[0].rawValue
 
-    if (data.startsWith('NEXAEVENT:')) {
+    if (data.startsWith('MUZAN:')) {
       const parts = data.split(':')
       const userId = parts[1]
       
@@ -76,7 +76,7 @@ export default function AttendeesPage() {
       })
       const updated = await res.json()
       setParticipants(prev => prev.map(x => x.id === p.id ? { ...x, ...updated } : x))
-      toast.success(p.checkedIn ? `${p.user.name} checked out` : `✅ ${p.user.name} checked in!`)
+      toast.success(p.checkedIn ? `${p.user.name} checked out` : `âœ… ${p.user.name} checked in!`)
     } catch {
       toast.error('Failed to update check-in')
     } finally {
@@ -188,7 +188,7 @@ export default function AttendeesPage() {
                 filter === f ? 'bg-violet-600 text-white' : 'text-gray-400 hover:text-white'
               }`}
             >
-              {f === 'all' ? 'All' : f === 'in' ? '✅ In' : '⏳ Pending'}
+              {f === 'all' ? 'All' : f === 'in' ? 'âœ… In' : 'â³ Pending'}
             </button>
           ))}
         </div>

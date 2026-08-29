@@ -36,9 +36,9 @@ const sharedNav = [
 ]
 
 const roleConfig: Record<string, { accent: string; glow: string; label: string; emoji: string }> = {
-  ORGANIZER: { accent: '#a855f7', glow: 'rgba(168,85,247,0.3)', label: 'Organizer', emoji: '🎯' },
-  PARTICIPANT: { accent: '#00e5ff', glow: 'rgba(0,229,255,0.3)', label: 'Participant', emoji: '🚀' },
-  JUDGE: { accent: '#10b981', glow: 'rgba(16,185,129,0.3)', label: 'Judge', emoji: '⚖️' },
+  ORGANIZER: { accent: '#a855f7', glow: 'rgba(168,85,247,0.3)', label: 'Organizer', emoji: 'ðŸŽ¯' },
+  PARTICIPANT: { accent: '#00e5ff', glow: 'rgba(0,229,255,0.3)', label: 'Participant', emoji: 'ðŸš€' },
+  JUDGE: { accent: '#10b981', glow: 'rgba(16,185,129,0.3)', label: 'Judge', emoji: 'âš–ï¸' },
 }
 
 export function Sidebar({ role, onClose }: { role: string, onClose?: () => void }) {
@@ -70,7 +70,7 @@ export function Sidebar({ role, onClose }: { role: string, onClose?: () => void 
           >
             <Zap className="w-4 h-4 text-white" />
           </div>
-          <span className="font-bold text-base text-white">NexaEvent</span>
+          <span className="font-bold text-base text-white">Muzan Hackathon</span>
         </Link>
       </div>
 

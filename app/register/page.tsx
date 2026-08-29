@@ -11,9 +11,9 @@ import { auth, db } from '@/lib/firebase/client'
 
 const SKILLS = ['React', 'Next.js', 'TypeScript', 'Python', 'AI/ML', 'Node.js', 'Go', 'Rust', 'UI/UX', 'DevOps', 'Blockchain', 'Mobile']
 const ROLES = [
-  { value: 'PARTICIPANT', label: 'Participant', desc: 'I am here to compete', emoji: '🚀' },
-  { value: 'JUDGE', label: 'Judge', desc: 'I will evaluate projects', emoji: '⚖️' },
-  { value: 'ORGANIZER', label: 'Organizer', desc: 'I am running this event', emoji: '🎯' },
+  { value: 'PARTICIPANT', label: 'Participant', desc: 'I am here to compete', emoji: 'ðŸš€' },
+  { value: 'JUDGE', label: 'Judge', desc: 'I will evaluate projects', emoji: 'âš–ï¸' },
+  { value: 'ORGANIZER', label: 'Organizer', desc: 'I am running this event', emoji: 'ðŸŽ¯' },
 ]
 
 export default function RegisterPage() {
@@ -52,7 +52,7 @@ export default function RegisterPage() {
 
       // 3. If Participant, create Participant record with QR
       if (form.role === 'PARTICIPANT') {
-        const qrData = `NEXAEVENT:${uid}:${Date.now()}`
+        const qrData = `MUZAN:${uid}:${Date.now()}`
         await setDoc(doc(db, 'participants', uid), {
           userId: uid,
           checkedIn: false,
@@ -91,7 +91,7 @@ export default function RegisterPage() {
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-600 to-cyan-500 flex items-center justify-center">
               <Zap className="w-5 h-5 text-white" />
             </div>
-            <span className="font-bold text-xl">NexaEvent</span>
+            <span className="font-bold text-xl">Muzan Hackathon</span>
           </Link>
           <h1 className="text-2xl font-bold mb-2">Create your account</h1>
           <p className="text-gray-500 text-sm">Step {step} of 2</p>
@@ -215,7 +215,7 @@ export default function RegisterPage() {
                 onClick={() => setStep(1)}
                 className="w-full py-2 text-sm text-gray-500 hover:text-gray-300 transition-colors"
               >
-                ← Back
+                â† Back
               </button>
             </motion.div>
           )}

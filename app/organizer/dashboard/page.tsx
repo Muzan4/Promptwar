@@ -36,11 +36,11 @@ const trackData = [
 ]
 
 const recentActivity = [
-  { type: 'checkin', user: 'Emma Wilson', time: '2 min ago', icon: '✅' },
-  { type: 'team', user: 'Neural Nexus', time: '5 min ago', icon: '👥' },
-  { type: 'submission', user: 'Chain Breakers', time: '12 min ago', icon: '📦' },
-  { type: 'checkin', user: 'Frank Patel', time: '15 min ago', icon: '✅' },
-  { type: 'announcement', user: 'Alex Morgan', time: '22 min ago', icon: '📢' },
+  { type: 'checkin', user: 'Emma Wilson', time: '2 min ago', icon: 'âœ…' },
+  { type: 'team', user: 'Neural Nexus', time: '5 min ago', icon: 'ðŸ‘¥' },
+  { type: 'submission', user: 'Chain Breakers', time: '12 min ago', icon: 'ðŸ“¦' },
+  { type: 'checkin', user: 'Frank Patel', time: '15 min ago', icon: 'âœ…' },
+  { type: 'announcement', user: 'Alex Morgan', time: '22 min ago', icon: 'ðŸ“¢' },
 ]
 
 export default function OrganizerDashboard() {
@@ -69,8 +69,8 @@ export default function OrganizerDashboard() {
   return (
     <DashboardLayout role="ORGANIZER">
       <PageHeader
-        title={`Welcome, Organizer ${user?.displayName || ''} ⚡`}
-        subtitle={`NexaHack 2024 · ${liveTime.toLocaleTimeString()}`}
+        title={`Welcome, Organizer ${user?.displayName || ''} âš¡`}
+        subtitle={`Muzan Hackathon 2026 Â· ${liveTime.toLocaleTimeString()}`}
         action={
           <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-green-500/10 border border-green-500/20 text-green-400 text-xs font-medium">
             <div className="w-2 h-2 rounded-full bg-green-400 live-dot" />
