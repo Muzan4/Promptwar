@@ -46,7 +46,7 @@ export default function SubmitPage() {
       const data = await res.json()
       if (data.error) throw new Error(data.error)
       setExisting(data)
-      toast.success('🚀 Project submitted successfully!')
+      toast.success('�� Project submitted successfully!')
     } catch (e: any) {
       toast.error(e.message || 'Submission failed')
     } finally {

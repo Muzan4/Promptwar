@@ -157,7 +157,7 @@ export default function JudgeDashboard() {
                       <h3 className="font-semibold">{sub.title}</h3>
                       {hasMyScore && <span className="text-xs bg-green-500/20 text-green-400 px-2 py-0.5 rounded-full">Scored</span>}
                     </div>
-                    <p className="text-sm text-gray-500">Team: {sub.team.name} · {sub.team.track}</p>
+                    <p className="text-sm text-gray-500">Team: {sub.team.name}  {sub.team.track}</p>
                   </div>
                   <div className="text-right mr-2">
                     {hasMyScore ? (

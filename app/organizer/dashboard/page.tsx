@@ -37,10 +37,10 @@ const trackData = [
 
 const recentActivity = [
   { type: 'checkin', user: 'Emma Wilson', time: '2 min ago', icon: '✅' },
-  { type: 'team', user: 'Neural Nexus', time: '5 min ago', icon: '👥' },
-  { type: 'submission', user: 'Chain Breakers', time: '12 min ago', icon: '📦' },
+  { type: 'team', user: 'Neural Nexus', time: '5 min ago', icon: '��' },
+  { type: 'submission', user: 'Chain Breakers', time: '12 min ago', icon: '��' },
   { type: 'checkin', user: 'Frank Patel', time: '15 min ago', icon: '✅' },
-  { type: 'announcement', user: 'Alex Morgan', time: '22 min ago', icon: '📢' },
+  { type: 'announcement', user: 'Alex Morgan', time: '22 min ago', icon: '��' },
 ]
 
 export default function OrganizerDashboard() {
@@ -70,7 +70,7 @@ export default function OrganizerDashboard() {
     <DashboardLayout role="ORGANIZER">
       <PageHeader
         title={`Welcome, Organizer ${user?.displayName || ''} ⚡`}
-        subtitle={`Muzan Hackathon 2026 · ${liveTime.toLocaleTimeString()}`}
+        subtitle={`Muzan Hackathon 2026  ${liveTime.toLocaleTimeString()}`}
         action={
           <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-green-500/10 border border-green-500/20 text-green-400 text-xs font-medium">
             <div className="w-2 h-2 rounded-full bg-green-400 live-dot" />

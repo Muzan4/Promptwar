@@ -61,7 +61,7 @@ export default function OrganizerJudgingPage() {
             </div>
             <div className="flex-1">
               <p className="font-semibold text-sm">{sub.title}</p>
-              <p className="text-xs text-gray-500">Team: {sub.team.name} · {sub.team.track}</p>
+              <p className="text-xs text-gray-500">Team: {sub.team.name}  {sub.team.track}</p>
             </div>
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-1.5 text-xs text-gray-500">

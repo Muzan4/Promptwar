@@ -67,7 +67,7 @@ export default function LeaderboardPage() {
             </div>
             <div>
               <h1 className="font-bold">Live Leaderboard</h1>
-              <p className="text-xs text-gray-500">Muzan Hackathon 2026 Â· Auto-updates every 15s</p>
+              <p className="text-xs text-gray-500">Muzan Hackathon 2026 Â Auto-updates every 15s</p>
             </div>
           </div>
           <div className="flex items-center gap-3">

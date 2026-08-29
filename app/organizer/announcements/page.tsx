@@ -53,7 +53,7 @@ export default function AnnouncementsPage() {
       setAnnouncements(prev => [newAnn, ...prev])
       setForm({ title: '', body: '', priority: 'INFO' })
       setShowCompose(false)
-      toast.success('📢 Announcement sent to all participants!')
+      toast.success('�� Announcement sent to all participants!')
     } catch {
       toast.error('Failed to send announcement')
     } finally {
@@ -201,7 +201,7 @@ export default function AnnouncementsPage() {
                     <p className="text-sm text-gray-400 leading-relaxed">{ann.body}</p>
                     <div className="flex items-center gap-3 mt-3 text-xs text-gray-600">
                       <span>by {ann.author.name}</span>
-                      <span>·</span>
+                      <span></span>
                       <span>{formatDate(ann.createdAt)}</span>
                     </div>
                   </div>

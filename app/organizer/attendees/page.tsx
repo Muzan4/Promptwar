@@ -24,7 +24,7 @@ export default function AttendeesPage() {
   const [checking, setChecking] = useState<string | null>(null)
   const [showScanner, setShowScanner] = useState(false)
 
-  const handleScan = (detectedCodes: any[]) => {
+  const handleScan = async (detectedCodes: any[]) => {
     if (!detectedCodes || detectedCodes.length === 0) return
     const data = detectedCodes[0].rawValue
 
@@ -32,7 +32,22 @@ export default function AttendeesPage() {
       const parts = data.split(':')
       const userId = parts[1]
       
-      const p = participants.find(p => p.user.id === userId || (p as any).userId === userId)
+      let p = participants.find(p => p.user.id === userId || (p as any).userId === userId)
+      
+      // If not found locally, the user might have just registered. Re-fetch.
+      if (!p) {
+        try {
+          const res = await fetch('/api/participants')
+          const freshData = await res.json()
+          if (Array.isArray(freshData)) {
+            setParticipants(freshData)
+            p = freshData.find(p => p.user.id === userId || (p as any).userId === userId)
+          }
+        } catch (e) {
+          console.error('Failed to refetch participants', e)
+        }
+      }
+
       if (p) {
         setShowScanner(false)
         if (p.checkedIn) {

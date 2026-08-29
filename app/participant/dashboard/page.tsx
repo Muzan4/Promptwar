@@ -36,8 +36,8 @@ export default function ParticipantDashboard() {
   return (
     <DashboardLayout role="PARTICIPANT">
       <PageHeader
-        title={`Hey, ${user?.displayName?.split(' ')[0] || user?.email?.split('@')[0] || 'Hacker'} 👋`}
-        subtitle="Muzan Hackathon 2026 · Dashboard"
+        title={`Hey, ${user?.displayName?.split(' ')[0] || user?.email?.split('@')[0] || 'Hacker'} ��`}
+        subtitle="Muzan Hackathon 2026  Dashboard"
       />
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -78,7 +78,7 @@ export default function ParticipantDashboard() {
               </div>
               <div className="flex items-center gap-3 text-sm">
                 <Clock className="w-4 h-4 text-gray-500" />
-                <span className="text-gray-400">Dec 15â€“16, 2024 Â· 36 hours</span>
+                <span className="text-gray-400">Dec 15â€“16, 2024 Â 36 hours</span>
               </div>
               <div className="flex items-center gap-3 text-sm">
                 <Trophy className="w-4 h-4 text-gray-500" />

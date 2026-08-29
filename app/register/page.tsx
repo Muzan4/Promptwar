@@ -11,9 +11,9 @@ import { auth, db } from '@/lib/firebase/client'
 
 const SKILLS = ['React', 'Next.js', 'TypeScript', 'Python', 'AI/ML', 'Node.js', 'Go', 'Rust', 'UI/UX', 'DevOps', 'Blockchain', 'Mobile']
 const ROLES = [
-  { value: 'PARTICIPANT', label: 'Participant', desc: 'I am here to compete', emoji: '🚀' },
+  { value: 'PARTICIPANT', label: 'Participant', desc: 'I am here to compete', emoji: '��' },
   { value: 'JUDGE', label: 'Judge', desc: 'I will evaluate projects', emoji: '⚖️' },
-  { value: 'ORGANIZER', label: 'Organizer', desc: 'I am running this event', emoji: '🎯' },
+  { value: 'ORGANIZER', label: 'Organizer', desc: 'I am running this event', emoji: '��' },
 ]
 
 export default function RegisterPage() {

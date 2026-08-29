@@ -70,7 +70,7 @@ export default function ParticipantFeed() {
                     <p className="text-sm text-gray-400 leading-relaxed">{ann.body}</p>
                     <div className="flex items-center gap-2 mt-2 text-xs text-gray-600">
                       <span>from {ann.author?.name}</span>
-                      <span>·</span>
+                      <span></span>
                       <span>{formatDate(ann.createdAt)}</span>
                     </div>
                   </div>
