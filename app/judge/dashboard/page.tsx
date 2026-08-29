@@ -107,7 +107,7 @@ export default function JudgeDashboard() {
       <div className="mb-6 p-4 rounded-2xl bg-violet-900/20 border border-violet-500/20 flex gap-3">
         <Star className="w-5 h-5 text-violet-400 flex-shrink-0 mt-0.5" />
         <div className="text-sm text-gray-400">
-          Each category is scored from <span className="text-white font-medium">0–50</span>.
+          Each category is scored from <span className="text-white font-medium">0-50</span>.
           Total score = average across all four categories.
           Your feedback is shown to teams after judging closes.
         </div>
@@ -157,7 +157,7 @@ export default function JudgeDashboard() {
                       <h3 className="font-semibold">{sub.title}</h3>
                       {hasMyScore && <span className="text-xs bg-green-500/20 text-green-400 px-2 py-0.5 rounded-full">Scored</span>}
                     </div>
-                    <p className="text-sm text-gray-500">Team: {sub.team.name}  {sub.team.track}</p>
+                    <p className="text-sm text-gray-500">Team: {sub.team.name} | {sub.team.track}</p>
                   </div>
                   <div className="text-right mr-2">
                     {hasMyScore ? (

@@ -22,7 +22,7 @@ export default function MyQRCodePage() {
       return
     }
     
-    getDoc(doc(db, 'participants', user.uid))
+    getDoc(doc(db, 'users', user.uid))
       .then(docSnap => {
         if (docSnap.exists()) {
           setParticipant({ id: docSnap.id, ...docSnap.data() })

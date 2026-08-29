@@ -46,7 +46,7 @@ export default function SubmitPage() {
       const data = await res.json()
       if (data.error) throw new Error(data.error)
       setExisting(data)
-      toast.success('�� Project submitted successfully!')
+      toast.success(' Project submitted successfully!')
     } catch (e: any) {
       toast.error(e.message || 'Submission failed')
     } finally {
@@ -60,7 +60,7 @@ export default function SubmitPage() {
 
       {!participant?.teamId && (
         <div className="mb-6 p-4 rounded-2xl bg-orange-500/10 border border-orange-500/20 text-orange-300 text-sm flex items-center gap-3">
-          ⚠️ You need to be in a team before submitting. Join or create a team first.
+           You need to be in a team before submitting. Join or create a team first.
         </div>
       )}
 
@@ -104,7 +104,7 @@ export default function SubmitPage() {
             className="w-full px-4 py-3 rounded-xl glass border border-white/10 focus:border-violet-500/50 focus:outline-none text-sm bg-transparent"
           />
           <textarea
-            placeholder="Describe your project — what it does, why it matters, how you built it..."
+            placeholder="Describe your project  what it does, why it matters, how you built it..."
             value={form.description}
             onChange={e => setForm(f => ({ ...f, description: e.target.value }))}
             rows={5}

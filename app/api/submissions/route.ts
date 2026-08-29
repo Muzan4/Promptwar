@@ -1,15 +1,30 @@
 import { NextResponse } from 'next/server'
+import { adminDb } from '@/lib/firebase/admin'
 
-const MOCK_SUBMISSIONS = [
-  { id: 's1', title: 'SmartScheduler', description: 'AI Agent for scheduling', totalScore: 42.5, team: { name: 'Neural Nexus', track: 'AI/ML' }, scores: [{ id: '1' }, { id: '2' }] },
-  { id: 's2', title: 'DeFi Swap', description: 'Swap tokens', totalScore: 38.0, team: { name: 'BlockBuilders', track: 'Web3' }, scores: [{ id: '3' }] },
-]
+export const dynamic = 'force-dynamic'
 
 export async function GET() {
-  return NextResponse.json(MOCK_SUBMISSIONS)
+  try {
+    const snapshot = await adminDb.collection('submissions').get()
+    const submissions = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }))
+    return NextResponse.json(submissions)
+  } catch (error) {
+    return NextResponse.json([])
+  }
 }
 
 export async function POST(req: Request) {
-  const data = await req.json()
-  return NextResponse.json({ ...data, id: Date.now().toString(), totalScore: 0, scores: [], team: { name: 'Your Team', track: 'General' } })
+  try {
+    const data = await req.json()
+    const newSubmission = {
+      ...data,
+      totalScore: 0,
+      scores: [],
+      createdAt: new Date().toISOString()
+    }
+    const docRef = await adminDb.collection('submissions').add(newSubmission)
+    return NextResponse.json({ id: docRef.id, ...newSubmission })
+  } catch (error) {
+    return NextResponse.json({ error: 'Failed' }, { status: 500 })
+  }
 }

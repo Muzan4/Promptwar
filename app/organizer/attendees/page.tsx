@@ -32,31 +32,31 @@ export default function AttendeesPage() {
       const parts = data.split(':')
       const userId = parts[1]
       
-      let p = participants.find(p => p.user.id === userId || (p as any).userId === userId)
-      
-      // If not found locally, the user might have just registered. Re-fetch.
-      if (!p) {
-        try {
-          const res = await fetch('/api/participants')
-          const freshData = await res.json()
-          if (Array.isArray(freshData)) {
-            setParticipants(freshData)
-            p = freshData.find(p => p.user.id === userId || (p as any).userId === userId)
+      try {
+        // Fetch the user directly from API to avoid downloading all participants
+        const res = await fetch('/api/participants')
+        const freshData = await res.json()
+        
+        let p = participants.find(p => p.id === userId)
+        if (!p && Array.isArray(freshData)) {
+          setParticipants(freshData)
+          p = freshData.find(p => p.id === userId)
+        }
+        
+        if (p) {
+          setShowScanner(false)
+          if (p.checkedIn) {
+            toast.info(`${p.user.name} is already checked in.`)
+          } else {
+            toggleCheckIn(p)
           }
-        } catch (e) {
-          console.error('Failed to refetch participants', e)
-        }
-      }
-
-      if (p) {
-        setShowScanner(false)
-        if (p.checkedIn) {
-          toast.info(`${p.user.name} is already checked in.`)
         } else {
-          toggleCheckIn(p)
+          toast.error('Participant not found.')
+          setShowScanner(false)
         }
-      } else {
-        toast.error('Participant not found.')
+      } catch (e) {
+        console.error('Failed to fetch participant', e)
+        toast.error('Network error. Try again.')
         setShowScanner(false)
       }
     } else {
@@ -91,7 +91,7 @@ export default function AttendeesPage() {
       })
       const updated = await res.json()
       setParticipants(prev => prev.map(x => x.id === p.id ? { ...x, ...updated } : x))
-      toast.success(p.checkedIn ? `${p.user.name} checked out` : `âœ… ${p.user.name} checked in!`)
+      toast.success(p.checkedIn ? `${p.user.name} checked out` : `${p.user.name} checked in!`)
     } catch {
       toast.error('Failed to update check-in')
     } finally {
@@ -203,7 +203,7 @@ export default function AttendeesPage() {
                 filter === f ? 'bg-violet-600 text-white' : 'text-gray-400 hover:text-white'
               }`}
             >
-              {f === 'all' ? 'All' : f === 'in' ? 'âœ… In' : 'â³ Pending'}
+              {f === 'all' ? 'All' : f === 'in' ? 'In' : 'Pending'}
             </button>
           ))}
         </div>

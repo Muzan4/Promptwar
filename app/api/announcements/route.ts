@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server'
 import { adminDb } from '@/lib/firebase/admin'
 
+export const dynamic = 'force-dynamic'
+
 export async function GET() {
   try {
     const snapshot = await adminDb.collection('announcements').orderBy('createdAt', 'desc').get()

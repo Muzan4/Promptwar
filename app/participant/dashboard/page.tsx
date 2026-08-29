@@ -36,8 +36,8 @@ export default function ParticipantDashboard() {
   return (
     <DashboardLayout role="PARTICIPANT">
       <PageHeader
-        title={`Hey, ${user?.displayName?.split(' ')[0] || user?.email?.split('@')[0] || 'Hacker'} ��`}
-        subtitle="Muzan Hackathon 2026  Dashboard"
+        title={`Hey, ${user?.displayName?.split(' ')[0] || user?.email?.split('@')[0] || 'Hacker'}!`}
+        subtitle="Muzan Hackathon 2026 Dashboard"
       />
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -47,7 +47,7 @@ export default function ParticipantDashboard() {
           <div className="grid grid-cols-2 gap-4">
             <StatCard
               label="Check-in Status"
-              value={participant?.checkedIn ? 'âœ… Checked In' : 'â³ Not Yet'}
+              value={participant?.checkedIn ? 'Checked In' : 'Not Yet'}
               icon={<QrCode className="w-4 h-4" />}
               color={participant?.checkedIn ? 'green' : 'orange'}
               delay={0}
@@ -78,11 +78,11 @@ export default function ParticipantDashboard() {
               </div>
               <div className="flex items-center gap-3 text-sm">
                 <Clock className="w-4 h-4 text-gray-500" />
-                <span className="text-gray-400">Dec 15â€“16, 2024 Â 36 hours</span>
+                <span className="text-gray-400">Dec 15-16, 2024 | 36 hours</span>
               </div>
               <div className="flex items-center gap-3 text-sm">
                 <Trophy className="w-4 h-4 text-gray-500" />
-                <span className="text-gray-400">â‚¹5,00,000 prize pool</span>
+                <span className="text-gray-400">Rs 5,00,000 prize pool</span>
               </div>
             </div>
           </motion.div>

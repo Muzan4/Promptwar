@@ -11,9 +11,9 @@ import { auth, db } from '@/lib/firebase/client'
 
 const SKILLS = ['React', 'Next.js', 'TypeScript', 'Python', 'AI/ML', 'Node.js', 'Go', 'Rust', 'UI/UX', 'DevOps', 'Blockchain', 'Mobile']
 const ROLES = [
-  { value: 'PARTICIPANT', label: 'Participant', desc: 'I am here to compete', emoji: '��' },
+  { value: 'PARTICIPANT', label: 'Participant', desc: 'I am here to compete', emoji: '👩‍💻' },
   { value: 'JUDGE', label: 'Judge', desc: 'I will evaluate projects', emoji: '⚖️' },
-  { value: 'ORGANIZER', label: 'Organizer', desc: 'I am running this event', emoji: '��' },
+  { value: 'ORGANIZER', label: 'Organizer', desc: 'I am running this event', emoji: '👑' },
 ]
 
 export default function RegisterPage() {
@@ -41,26 +41,22 @@ export default function RegisterPage() {
       const uid = userCredential.user.uid
 
       // 2. Create User document in Firestore
-      await setDoc(doc(db, 'users', uid), {
+      const userData: any = {
         name: form.name,
         email: form.email,
         role: form.role,
         skills: JSON.stringify(form.skills),
         bio: form.bio,
         createdAt: new Date().toISOString()
-      })
-
-      // 3. If Participant, create Participant record with QR
-      if (form.role === 'PARTICIPANT') {
-        const qrData = `MUZAN:${uid}:${Date.now()}`
-        await setDoc(doc(db, 'participants', uid), {
-          userId: uid,
-          checkedIn: false,
-          checkedInAt: null,
-          qrCode: qrData,
-          createdAt: new Date().toISOString()
-        })
       }
+
+      if (form.role === 'PARTICIPANT') {
+        userData.qrCode = `MUZAN:${uid}:${Date.now()}`
+        userData.checkedIn = false
+        userData.checkedInAt = null
+      }
+
+      await setDoc(doc(db, 'users', uid), userData)
 
       toast.success('Account created! Logging you in...')
       
@@ -215,7 +211,7 @@ export default function RegisterPage() {
                 onClick={() => setStep(1)}
                 className="w-full py-2 text-sm text-gray-500 hover:text-gray-300 transition-colors"
               >
-                â† Back
+                 Back
               </button>
             </motion.div>
           )}

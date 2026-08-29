@@ -40,20 +40,19 @@ export default function AnnouncementsPage() {
 
   async function sendAnnouncement() {
     if (!form.title || !form.body) { toast.error('Fill all fields'); return }
+    if (!user) { toast.error('Not authenticated'); return }
     setSending(true)
     try {
-      const meRes = await fetch('/api/me')
-      const me = await meRes.json()
       const res = await fetch('/api/announcements', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, authorId: me.id }),
+        body: JSON.stringify({ ...form, authorId: user.uid }),
       })
       const newAnn = await res.json()
       setAnnouncements(prev => [newAnn, ...prev])
       setForm({ title: '', body: '', priority: 'INFO' })
       setShowCompose(false)
-      toast.success('�� Announcement sent to all participants!')
+      toast.success('Announcement sent to all participants!')
     } catch {
       toast.error('Failed to send announcement')
     } finally {

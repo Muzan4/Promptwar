@@ -25,7 +25,7 @@ export default function OrganizerTeamsPage() {
     <DashboardLayout role="ORGANIZER">
       <PageHeader
         title="Team Overview"
-        subtitle={`${teams.length} teams formed  ${openTeams.length} still open`}
+        subtitle={`${teams.length} teams formed | ${openTeams.length} still open`}
       />
 
       {/* Stats */}

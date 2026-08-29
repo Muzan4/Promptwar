@@ -23,9 +23,20 @@ export default function LoginPage() {
       toast.success('Welcome back!')
       
       // Fetch user role from Firestore
-      const userDoc = await getDoc(doc(db, 'users', userCredential.user.uid))
+      const userRef = doc(db, 'users', userCredential.user.uid)
+      const userDoc = await getDoc(userRef)
       const userData = userDoc.data()
       const role = userData?.role || 'PARTICIPANT'
+      
+      // If Participant and missing QR code (e.g. older accounts), assign one now
+      if (role === 'PARTICIPANT' && userData && !userData.qrCode) {
+        const { updateDoc } = await import('firebase/firestore')
+        await updateDoc(userRef, {
+          qrCode: `MUZAN:${userCredential.user.uid}:${Date.now()}`,
+          checkedIn: false,
+          checkedInAt: null
+        })
+      }
       
       if (role === 'ORGANIZER') router.push('/organizer/dashboard')
       else if (role === 'JUDGE') router.push('/judge/dashboard')

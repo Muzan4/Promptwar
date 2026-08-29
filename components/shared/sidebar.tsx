@@ -36,9 +36,9 @@ const sharedNav = [
 ]
 
 const roleConfig: Record<string, { accent: string; glow: string; label: string; emoji: string }> = {
-  ORGANIZER: { accent: '#a855f7', glow: 'rgba(168,85,247,0.3)', label: 'Organizer', emoji: '��' },
-  PARTICIPANT: { accent: '#00e5ff', glow: 'rgba(0,229,255,0.3)', label: 'Participant', emoji: '��' },
-  JUDGE: { accent: '#10b981', glow: 'rgba(16,185,129,0.3)', label: 'Judge', emoji: '⚖️' },
+  ORGANIZER: { accent: '#a855f7', glow: 'rgba(168,85,247,0.3)', label: 'Organizer', emoji: '' },
+  PARTICIPANT: { accent: '#00e5ff', glow: 'rgba(0,229,255,0.3)', label: 'Participant', emoji: '' },
+  JUDGE: { accent: '#10b981', glow: 'rgba(16,185,129,0.3)', label: 'Judge', emoji: '' },
 }
 
 export function Sidebar({ role, onClose }: { role: string, onClose?: () => void }) {
