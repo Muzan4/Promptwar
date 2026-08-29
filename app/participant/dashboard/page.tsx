@@ -36,8 +36,8 @@ export default function ParticipantDashboard() {
   return (
     <DashboardLayout role="PARTICIPANT">
       <PageHeader
-        title={`Hey, ${user?.displayName?.split(' ')[0] || user?.email?.split('@')[0] || 'Hacker'} ðŸ‘‹`}
-        subtitle="Muzan Hackathon 2026 Â· Dashboard"
+        title={`Hey, ${user?.displayName?.split(' ')[0] || user?.email?.split('@')[0] || 'Hacker'} 👋`}
+        subtitle="Muzan Hackathon 2026 · Dashboard"
       />
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">

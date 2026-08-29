@@ -10,15 +10,15 @@ const features = [
   { icon: Bell, title: 'Live Announcements', desc: 'Real-time push notifications for schedule changes and alerts', color: 'text-orange-400', glow: 'rgba(251,146,60,0.15)', border: 'rgba(251,146,60,0.3)' },
   { icon: Award, title: 'Judging Portal', desc: 'Structured rubric-based scoring with instant feedback', color: 'text-emerald-400', glow: 'rgba(52,211,153,0.15)', border: 'rgba(52,211,153,0.3)' },
   { icon: BarChart3, title: 'Live Leaderboard', desc: 'Dynamic rankings updated in real-time as scores come in', color: 'text-pink-400', glow: 'rgba(244,114,182,0.15)', border: 'rgba(244,114,182,0.3)' },
-  { icon: Zap, title: 'One Dashboard', desc: 'Everything consolidated Ã¢â‚¬â€ zero platform juggling', color: 'text-yellow-400', glow: 'rgba(250,204,21,0.15)', border: 'rgba(250,204,21,0.3)' },
+  { icon: Zap, title: 'One Dashboard', desc: 'Everything consolidated — zero platform juggling', color: 'text-yellow-400', glow: 'rgba(250,204,21,0.15)', border: 'rgba(250,204,21,0.3)' },
 ]
 
 const roles = [
   {
     label: 'Organizer',
-    desc: 'Full control Ã¢â‚¬â€ manage everything',
+    desc: 'Full control — manage everything',
     href: '/login?role=ORGANIZER',
-    icon: 'Ã°Å¸Å½Â¯',
+    icon: '🎯',
     accent: '#a855f7',
     glowColor: 'rgba(168,85,247,0.3)',
     borderColor: 'rgba(168,85,247,0.4)',
@@ -28,7 +28,7 @@ const roles = [
     label: 'Participant',
     desc: 'Register, team up, and compete',
     href: '/login?role=PARTICIPANT',
-    icon: 'Ã°Å¸Å¡â‚¬',
+    icon: '🚀',
     accent: '#00e5ff',
     glowColor: 'rgba(0,229,255,0.3)',
     borderColor: 'rgba(0,229,255,0.4)',
@@ -161,7 +161,7 @@ export default function LandingPage() {
                 <div className="w-2 h-2 rounded-full bg-green-400 live-dot" />
               </div>
               <Terminal className="w-3 h-3" />
-              LIVE Ã‚Â· Muzan Hackathon 2026 Ã‚Â· All systems operational
+              LIVE · Muzan Hackathon 2026 · All systems operational
             </div>
           </motion.div>
 
@@ -367,7 +367,7 @@ export default function LandingPage() {
           <span className="font-bold text-sm text-white">Muzan Hackathon</span>
         </div>
         <p className="text-xs" style={{ color: 'rgba(100,110,130,0.8)' }}>
-          Ã‚Â© 2026 Muzan Hackathon Ã‚Â· Built with Ã¢ÂÂ¤Ã¯Â¸Â for Hack2Skill Ã‚Â· <span style={{ color: 'rgba(0,229,255,0.5)' }}>Real-time Ã‚Â· Role-based Ã‚Â· Beautiful</span>
+          © 2026 Muzan Hackathon · Built with ❤️ for Hack2Skill · <span style={{ color: 'rgba(0,229,255,0.5)' }}>Real-time · Role-based · Beautiful</span>
         </p>
       </footer>
     </div>
