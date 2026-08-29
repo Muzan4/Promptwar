@@ -5,28 +5,18 @@ export const dynamic = 'force-dynamic'
 
 export async function GET() {
   try {
-    const [usersSnap, teamsSnap, subsSnap] = await Promise.all([
-      adminDb.collection('users').get(),
-      adminDb.collection('teams').get(),
-      adminDb.collection('submissions').get(),
+    const [totalUsers, checkedInUsers, totalTeams, totalSubs] = await Promise.all([
+      adminDb.collection('users').where('role', '==', 'PARTICIPANT').count().get(),
+      adminDb.collection('users').where('role', '==', 'PARTICIPANT').where('checkedIn', '==', true).count().get(),
+      adminDb.collection('teams').count().get(),
+      adminDb.collection('submissions').count().get(),
     ])
 
-    let total = 0
-    let checkedIn = 0
-    
-    usersSnap.forEach(doc => {
-      const data = doc.data()
-      if (data.role === 'PARTICIPANT') {
-        total++
-        if (data.checkedIn) checkedIn++
-      }
-    })
-
     return NextResponse.json({
-      total,
-      checkedIn,
-      teams: teamsSnap.size,
-      submissions: subsSnap.size,
+      total: totalUsers.data().count,
+      checkedIn: checkedInUsers.data().count,
+      teams: totalTeams.data().count,
+      submissions: totalSubs.data().count,
       timeline: []
     })
   } catch (error) {

@@ -43,9 +43,13 @@ export default function AnnouncementsPage() {
     if (!user) { toast.error('Not authenticated'); return }
     setSending(true)
     try {
+      const token = await user.getIdToken()
       const res = await fetch('/api/announcements', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
         body: JSON.stringify({ ...form, authorId: user.uid }),
       })
       const newAnn = await res.json()
@@ -118,12 +122,14 @@ export default function AnnouncementsPage() {
               </div>
 
               <input
+                aria-label="Announcement title"
                 placeholder="Announcement title..."
                 value={form.title}
                 onChange={e => setForm(f => ({ ...f, title: e.target.value }))}
                 className="w-full px-4 py-3 rounded-xl glass border border-white/10 focus:border-violet-500/50 focus:outline-none text-sm bg-transparent mb-3"
               />
               <textarea
+                aria-label="Announcement body"
                 placeholder="Write your message here... Be clear and concise."
                 value={form.body}
                 onChange={e => setForm(f => ({ ...f, body: e.target.value }))}

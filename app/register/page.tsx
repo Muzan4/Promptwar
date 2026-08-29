@@ -125,8 +125,10 @@ export default function RegisterPage() {
               </div>
 
               <div className="relative">
-                <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
+                <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" aria-hidden="true" />
                 <input
+                  type="text"
+                  aria-label="Full Name"
                   placeholder="Full name"
                   value={form.name}
                   onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
@@ -134,9 +136,10 @@ export default function RegisterPage() {
                 />
               </div>
               <div className="relative">
-                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
+                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" aria-hidden="true" />
                 <input
                   type="email"
+                  aria-label="Email address"
                   placeholder="Email address"
                   value={form.email}
                   onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
@@ -144,15 +147,30 @@ export default function RegisterPage() {
                 />
               </div>
               <div className="relative">
-                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
+                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" aria-hidden="true" />
                 <input
                   type="password"
+                  aria-label="Password"
                   placeholder="Password (min 6 chars)"
                   value={form.password}
                   onChange={e => setForm(f => ({ ...f, password: e.target.value }))}
                   className="w-full pl-10 pr-4 py-3 rounded-xl glass border border-white/10 focus:border-violet-500/50 focus:outline-none text-sm bg-transparent"
                 />
               </div>
+              {form.role === 'PARTICIPANT' && (
+                <div className="relative">
+                  <Code className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" aria-hidden="true" />
+                  <select
+                    aria-label="Primary Skill"
+                    value={form.skills[0] || ''}
+                    onChange={(e) => setForm(f => ({ ...f, skills: [e.target.value] }))}
+                    className="w-full pl-10 pr-4 py-3 rounded-xl glass border border-white/10 focus:border-violet-500/50 focus:outline-none text-sm transition-colors bg-transparent appearance-none"
+                  >
+                    <option value="" disabled>Select primary skill</option>
+                    {SKILLS.map(s => <option key={s} value={s}>{s}</option>)}
+                  </select>
+                </div>
+              )}
               <button
                 onClick={() => {
                   if (!form.name || !form.email || !form.password) { toast.error('Fill all fields'); return }

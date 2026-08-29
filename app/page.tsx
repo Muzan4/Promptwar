@@ -104,7 +104,7 @@ function TerminalHero() {
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen overflow-hidden" style={{ background: 'transparent' }}>
+    <main className="min-h-screen overflow-hidden" style={{ background: 'transparent' }}>
 
       {/* Nav */}
       <motion.nav
@@ -142,9 +142,9 @@ export default function LandingPage() {
       {/* Hero */}
       <section className="relative pt-36 pb-28 px-6 overflow-hidden">
         {/* Background glow orbs */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] pointer-events-none" style={{ background: 'radial-gradient(ellipse at center, rgba(0,200,255,0.06) 0%, transparent 70%)' }} />
-        <div className="absolute top-40 left-1/4 w-96 h-96 rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(168,85,247,0.07) 0%, transparent 70%)', filter: 'blur(40px)' }} />
-        <div className="absolute top-20 right-1/4 w-80 h-80 rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(0,229,255,0.07) 0%, transparent 70%)', filter: 'blur(40px)' }} />
+        <div aria-hidden="true" className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] pointer-events-none" style={{ background: 'radial-gradient(ellipse at center, rgba(0,200,255,0.06) 0%, transparent 70%)' }} />
+        <div aria-hidden="true" className="absolute top-40 left-1/4 w-96 h-96 rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(168,85,247,0.07) 0%, transparent 70%)', filter: 'blur(40px)' }} />
+        <div aria-hidden="true" className="absolute top-20 right-1/4 w-80 h-80 rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(0,229,255,0.07) 0%, transparent 70%)', filter: 'blur(40px)' }} />
 
         <motion.div
           className="max-w-6xl mx-auto"
@@ -370,6 +370,6 @@ export default function LandingPage() {
           2026 NexaEvent | Built with love for Event Management | <span style={{ color: 'rgba(0,229,255,0.5)' }}>Real-time | Role-based | Beautiful</span>
         </p>
       </footer>
-    </div>
+    </main>
   )
 }
